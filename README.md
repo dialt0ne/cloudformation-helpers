@@ -20,6 +20,7 @@ Once you do this, you can copy/paste the results into your template.
 
  - better templating for [`Ref`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html) and possibly [`Fn::GetAtt`](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html)
  - don't copy/paste results into a template, take a template as an argument and use templating
+ - include more [cloud-init](http://cloudinit.readthedocs.org/en/latest/topics/format.html) features, formats
 
 ### License
 
