@@ -26,12 +26,14 @@ import re
 progname = "mkcfnuserdata.py"
 if __name__ == '__main__':
     # setup arguments
-    parser = argparse.ArgumentParser(prog=progname,
-            description="JSON encodes a file as list of strings "
-            "and parses it for CloudFormation Ref objects"
+    parser = argparse.ArgumentParser(
+        prog=progname,
+        description="JSON encodes a file as list of strings "
+        "and parses it for CloudFormation Ref objects"
     )
-    parser.add_argument("filenames",
-            help="files to encode", nargs='*'
+    parser.add_argument(
+        "filenames",
+        help="files to encode", nargs='*'
     )
     args = parser.parse_args()
     # prep regular expressions
@@ -61,5 +63,8 @@ if __name__ == '__main__':
         # get the json
         j = json.dumps(lines, indent=1)
         # do a little templating for CloudFormation Refs
-        print re.sub(r'CFNREF_([a-zA-Z_0-9]+)',
-            r'", { "Ref": "\1" }, "', j)
+        print re.sub(
+            r'CFNREF_([a-zA-Z_0-9]+)',
+            r'", { "Ref": "\1" }, "',
+            j
+        )
