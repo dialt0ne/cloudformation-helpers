@@ -1,6 +1,30 @@
 ## CloudFormation Helpers
 
-Some scripts to help you create [AWS CloudFormation](http://aws.amazon.com/cloudformation/) templates
+Some scripts to help you manage [AWS CloudFormation](http://aws.amazon.com/cloudformation/) stacks
+
+### asg-attic.py
+
+A cost-saving script for full-stack deployments. This script mothballs all
+[AutoScaling groups](http://aws.amazon.com/autoscaling/) in old stacks
+by setting the min/max/desired to 0. This is so you can keep old stacks around for
+"a while" in case a roll-back is required.
+
+<pre>
+$ ./asg-attic.py -h
+usage: asg-attic.py [-h] [-l] [-m MOTHBALL] [-r REOPEN REOPEN]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -l, --list            list stacks, autoscaling groups and values
+  -m MOTHBALL, --mothball MOTHBALL
+                        reduce the instances for all autoscaling group(s) in a
+                        stack to zero
+  -r REOPEN REOPEN, --reopen REOPEN REOPEN
+                        increase the instances for all autoscaling group(s) in
+                        a stack to min:max:desired
+</pre>
+
+To use it, you'll need to configure your [boto credentials](http://boto.readthedocs.org/en/latest/boto_config_tut.html#credentials).
 
 ### mkcfnuserdata.py
 
