@@ -38,7 +38,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     # prep regular expressions
     shebang = re.compile('^#\!.*$')
-    commentLine = re.compile('^#.*')
+    commentLine = re.compile('^\s*#.*')
     blankLine = re.compile('^$')
     # iterate on args
     for filename in args.filenames:
