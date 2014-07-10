@@ -1,3 +1,5 @@
+[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=dialt0ne&url=https://github.com/dialt0ne/cloudformation-helpers&title=cloudformation-helpers&language=python&tags=github&category=software)
+
 ## CloudFormation Helpers
 
 Some scripts to help you manage [AWS CloudFormation](http://aws.amazon.com/cloudformation/) stacks
