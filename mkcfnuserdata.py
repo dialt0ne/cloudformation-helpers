@@ -64,7 +64,7 @@ if __name__ == '__main__':
         j = json.dumps(lines, indent=1)
         # do a little templating for CloudFormation Refs
         print re.sub(
-            r'CFNREF_([a-zA-Z_0-9]+)',
+            r'CFNREF_([a-zA-Z_0-9:]+)',
             r'", { "Ref": "\1" }, "',
             j
         )
